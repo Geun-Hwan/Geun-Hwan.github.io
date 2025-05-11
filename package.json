@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Geun-Hwan.github.io/Geun-Hwan.github.io",
+  "homepage": "https://geun-hwan.github.io/",
   "scripts": {
     "start": "vite --host",
     "dev": "vite",

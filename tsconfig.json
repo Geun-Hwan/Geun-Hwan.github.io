@@ -1,7 +1,27 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "target": "ESNext", // 최신 JS 문법 타겟팅
+    "module": "ESNext", // ES 모듈 사용
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // 브라우저 환경과 최신 JS 라이브러리 포함
+    "allowJs": false, // JS 파일 허용 여부
+    "jsx": "react-jsx", // React 17+ JSX 변환 방식
+    "moduleResolution": "node", // Node 방식 모듈 해석
+    "resolveJsonModule": true, // JSON import 허용
+    "esModuleInterop": true, // CommonJS 호환성
+    "skipLibCheck": true, // 라이브러리 타입 검사 건너뛰기
+    "forceConsistentCasingInFileNames": true, // 파일명 대소문자 강제 일치
+    "strict": true, // 엄격 모드 켜기 (strictNullChecks 등 포함)
+    "noImplicitAny": true, // any 타입 경고
+    "noUnusedLocals": true, // 사용 안 하는 지역변수 경고
+    "noUnusedParameters": true, // 사용 안 하는 함수 매개변수 경고
+    "noFallthroughCasesInSwitch": true, // switch 누락 방지,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "baseUrl": ".", // 절대경로 기준 디렉토리
+    "paths": {
+      "@/*": ["src/*"] // '@'를 src 폴더로 매핑
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

@@ -43,10 +43,12 @@ const Experience: React.FC<Props> = ({ resumeExperience, resumeBasicInfo }) => {
       </Badge>
     ));
 
+    const dateElement = <span style={{ fontSize: 12 }}>{workItem.years}</span>;
+
     return (
       <VerticalTimelineElement
         className="vertical-timeline-element--work"
-        date={workItem.years}
+        date={dateElement}
         iconStyle={{
           background: "#AE944F",
           color: "#fff",
@@ -78,7 +80,10 @@ const Experience: React.FC<Props> = ({ resumeExperience, resumeBasicInfo }) => {
     <section id="resume" className="pb-5">
       <div className="col-md-12 mx-auto">
         <div className="col-md-12">
-          <h1 className="section-title" style={{ color: "black" }}>
+          <h1
+            className="section-title"
+            style={{ color: "black", fontSize: 30 }}
+          >
             <span className="text-black" style={{ textAlign: "center" }}>
               {sectionName}
             </span>

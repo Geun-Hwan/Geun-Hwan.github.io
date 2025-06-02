@@ -1,8 +1,8 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
+import ReactDOM from "react-dom";
 
 import App from "./App.tsx";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
 
 // ✅ GLOBAL VARIABLES
 
@@ -10,11 +10,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const container = document.getElementById("root");
 
 if (container) {
-  const root = createRoot(container);
-  root.render(
-    <StrictMode>
+  ReactDOM.render(
+    <React.StrictMode>
       <App />
-    </StrictMode>
+    </React.StrictMode>,
+    container
   );
 } else {
   console.error("Root element not found");

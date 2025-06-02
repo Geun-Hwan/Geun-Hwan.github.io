@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
-import angularIcon from "@iconify/icons-logos/angular-icon";
+import springIcon from "@iconify/icons-logos/spring-icon";
 import reactIcon from "@iconify/icons-logos/react";
-import vueIcon from "@iconify/icons-logos/vue";
+import gitIcon from "@iconify/icons-logos/git-icon";
 import type { FC } from "react";
 
 interface AboutProps {
@@ -18,7 +18,7 @@ const About: FC<AboutProps> = ({ resumeBasicInfo, sharedBasicInfo }) => {
   return (
     <section id="about">
       <div className="col-md-12">
-        <h1 style={{ color: "black" }}>
+        <h1 style={{ color: "black", fontSize: 30 }}>
           <span>{sectionName}</span>
         </h1>
         <div className="row center mx-auto mb-5">
@@ -27,7 +27,7 @@ const About: FC<AboutProps> = ({ resumeBasicInfo, sharedBasicInfo }) => {
               <span style={{ cursor: "auto" }}>
                 <img height="250px" src={profilepic} alt="Avatar placeholder" />
                 <Icon
-                  icon={angularIcon}
+                  icon={springIcon}
                   style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
                 />
                 <Icon
@@ -35,7 +35,7 @@ const About: FC<AboutProps> = ({ resumeBasicInfo, sharedBasicInfo }) => {
                   style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
                 />
                 <Icon
-                  icon={vueIcon}
+                  icon={gitIcon}
                   style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
                 />
               </span>
@@ -68,12 +68,14 @@ const About: FC<AboutProps> = ({ resumeBasicInfo, sharedBasicInfo }) => {
                   className="card-body font-trebuchet text-justify ml-3 mr-3"
                   style={{
                     height: "auto",
-                    fontSize: "132%",
+                    fontSize: "152%",
                     lineHeight: "200%",
                   }}
                 >
                   <br />
-                  <span className="wave">{hello} :) </span>
+                  <span className="wave">
+                    {hello} {":)"}{" "}
+                  </span>
                   <br />
                   <br />
                   {about}

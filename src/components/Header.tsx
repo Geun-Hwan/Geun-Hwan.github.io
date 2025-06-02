@@ -72,7 +72,7 @@ const Header = ({ sharedData }: HeaderProps) => {
               uncheckedIcon={
                 <span
                   className="iconify"
-                  data-icon="twemoji:owl"
+                  data-icon="fa-solid:moon"
                   data-inline="false"
                   style={{
                     display: "block",

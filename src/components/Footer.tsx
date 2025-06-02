@@ -32,7 +32,10 @@ const Footer: FC<FooterProps> = ({ sharedBasicInfo }) => {
         <div className="copyright py-4 text-center">
           <div className="container">
             <small>
-              Copyright &copy; {sharedBasicInfo ? sharedBasicInfo.name : "???"}
+              Copyright &copy; 2025{" "}
+              {sharedBasicInfo ? sharedBasicInfo.name : "???"}
+              {/* <br />
+              <a href="mailto:rmsghks1026@gmail.com">msghks1026@gmail.com</a> */}
             </small>
           </div>
         </div>

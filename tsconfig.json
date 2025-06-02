@@ -10,9 +10,9 @@
     "esModuleInterop": true, // CommonJS 호환성
     "skipLibCheck": true, // 라이브러리 타입 검사 건너뛰기
     "forceConsistentCasingInFileNames": true, // 파일명 대소문자 강제 일치
-    "strict": true, // 엄격 모드 켜기 (strictNullChecks 등 포함)
-    "noImplicitAny": true, // any 타입 경고
-    "noUnusedLocals": true, // 사용 안 하는 지역변수 경고
+    "strict": false, // 엄격 모드 켜기 (strictNullChecks 등 포함)
+    "noImplicitAny": false, // any 타입 경고
+    "noUnusedLocals": false, // 사용 안 하는 지역변수 경고
     "noUnusedParameters": true, // 사용 안 하는 함수 매개변수 경고
     "noFallthroughCasesInSwitch": true, // switch 누락 방지,
     "allowImportingTsExtensions": true,

@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
-import Skills from "./components/Skills";
+import Skills from "@/components/Skills";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 interface ResumeData {
@@ -56,12 +56,12 @@ function App() {
           <span
             id="en"
             className="iconify language-icon mr-5"
-            data-icon="twemoji-flag-for-flag-united-kingdom"
+            data-icon="twemoji:flag-south-korea"
             data-inline="false"
           ></span>
         </div>
       </div>
-      {/* <About
+      <About
         resumeBasicInfo={resumeData.basic_info}
         sharedBasicInfo={sharedData.basic_info}
       />
@@ -77,7 +77,7 @@ function App() {
         resumeExperience={resumeData.experience}
         resumeBasicInfo={resumeData.basic_info}
       />
-      <Footer sharedBasicInfo={sharedData.basic_info} /> */}
+      <Footer sharedBasicInfo={sharedData.basic_info} />
     </div>
   );
 }

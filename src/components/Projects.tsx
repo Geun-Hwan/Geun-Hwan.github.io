@@ -3,9 +3,11 @@ import ProjectDetailsModal from "./ProjectDetailsModal";
 
 interface Project {
   title: string;
-  images: string[];
   startDate: string;
-  [key: string]: any; // 필요시 다른 속성도 포함
+  description: string;
+  images: string[];
+  url: string;
+  technologies: any[];
 }
 
 interface ProjectsProps {
@@ -22,6 +24,7 @@ const Projects: React.FC<ProjectsProps> = ({
 
   const detailsModalShowHandler = (data: Project) => {
     setDeps(data);
+
     setDetailsModalShow(true);
   };
 
@@ -44,6 +47,7 @@ const Projects: React.FC<ProjectsProps> = ({
               alt="projectImages"
               height={230}
               style={{
+                width: 350,
                 marginBottom: 0,
                 paddingBottom: 0,
                 position: "relative",
@@ -61,7 +65,7 @@ const Projects: React.FC<ProjectsProps> = ({
   return (
     <section id="portfolio">
       <div className="col-md-12">
-        <h1 className="section-title" style={{ color: "black" }}>
+        <h1 className="section-title" style={{ color: "black", fontSize: 30 }}>
           <span>{sectionName}</span>
         </h1>
         <div className="col-md-12 mx-auto">

@@ -1,21 +1,20 @@
 {
   "basic_info": {
-    "name": "",
+    "name": "김근환",
     "titles": [
-      "Front-end Developer",
-      "Senior Data Engineer",
-      "Dev Team lead",
-      "Mobile App Developer"
+      "Full-stack Developer",
+      "React Native Developer",
+      "Web & App Developer"
     ],
     "social": [
       {
         "name": "github",
-        "url": "https://github.com",
+        "url": "https://github.com/Geun-Hwan",
         "class": "fab fa-github"
       },
       {
         "name": "instagram",
-        "url": "https://www.instagram.com",
+        "url": "https://www.instagram.com/rmsghks1026/",
         "class": "fab fa-instagram"
       }
     ],
@@ -24,49 +23,75 @@
   "skills": {
     "icons": [
       {
-        "name": "HTML 5",
-        "class": "devicon-html5-plain",
-        "level": "95"
+        "name": "Java",
+        "class": "devicon-java-plain",
+        "level": "100"
       },
       {
-        "name": "CSS 3",
-        "class": "devicon-css3-plain",
-        "level": "95"
-      },
-      {
-        "name": "Angular",
-        "class": "devicon-angularjs-plain",
-        "level": "80"
+        "name": "React",
+        "class": "devicon-react-plain",
+        "level": "100"
       },
       {
         "name": "TypeScript",
         "class": "devicon-typescript-plain",
-        "level": "90"
+        "level": "100"
       },
       {
         "name": "JavaScript",
         "class": "devicon-javascript-plain",
-        "level": "70"
+        "level": "100"
       },
+
       {
-        "name": "Sass",
-        "class": "devicon-sass-original",
-        "level": "75"
-      },
-      {
-        "name": "Bootstrap",
-        "class": "devicon-bootstrap-plain",
-        "level": "85"
+        "name": "MySql",
+        "class": "devicon-mysql-plain",
+        "level": "100"
       },
       {
         "name": "C#",
         "class": "devicon-csharp-plain",
-        "level": "65"
+        "level": "100"
       },
       {
-        "name": "MySql",
-        "class": "devicon-mysql-plain",
-        "level": "60"
+        "name": "Python",
+        "class": "devicon-python-plain",
+        "level": "100"
+      },
+      {
+        "name": "Git",
+        "class": "devicon-git-plain",
+        "level": "100"
+      },
+      {
+        "name": "Linux",
+        "class": "devicon-linux-plain",
+        "level": "100"
+      },
+      {
+        "name": "Ubuntu",
+        "class": "devicon-ubuntu-plain",
+        "level": "100"
+      },
+      {
+        "name": "Redis",
+        "class": "devicon-redis-plain",
+        "level": "100"
+      },
+      {
+        "name": "Oracle",
+        "class": "devicon-oracle-plain",
+        "level": "100"
+      },
+      {
+        "name": "HTML 5",
+        "class": "devicon-html5-plain",
+        "level": "100"
+      },
+      {
+        "name": "CSS 3",
+        "class": "devicon-css3-plain",
+        "level": "100"
       }
     ]
   }

@@ -70,9 +70,16 @@
       "images": [
         "images/portfolio/travit/img1.png",
         "images/portfolio/travit/ar1.png",
-        "images/portfolio/travit/ar2.png"
+        "images/portfolio/travit/ar2.png",
+        "images/portfolio/travit/mz_img1.png",
+        "images/portfolio/travit/mz_img2.png",
+        "images/portfolio/travit/mz_img3.png",
+        "images/portfolio/travit/mz_img4.png",
+        "images/portfolio/travit/mz_img5.png",
+        "images/portfolio/travit/mb_img1.png",
+        "images/portfolio/travit/mb_img2.png"
       ],
-      "url": "https://github.com",
+      "url": "https://travit.co.kr/",
       "technologies": [
         {
           "class": "devicon-react-original",
@@ -111,8 +118,8 @@
     },
     {
       "title": "스파이더 카드게임",
-      "startDate": "2024",
-      "description": "One of the first apps I was working on my internship. I had to develop front-end implementation for app that shows 3D models of known buildings. This was also my first project in Angular framework. I've learned a lot!",
+      "startDate": "2024.08~2024.09",
+      "description": "취미로 Unity를 활용해 흔히 아는 스파이더게임을 제작 해봤습니다. 원본 소스 코드는 유실되었지만, Xcode로 Export된 iOS용 프로젝트 파일과 플레이 영상은 보유 중입니다. 해당 프로젝트는 Xcode를 통해 iPhone에 설치할 수 있습니다.",
       "images": [
         "images/portfolio/spider/spider0.png",
         "images/portfolio/spider/spider.mp4"
@@ -132,10 +139,15 @@
     },
 
     {
+      "codeSnippet": "snippets/QuestionService.java",
       "title": "Balance Factory",
       "startDate": "2025.03~",
       "description": "매일 새로운 밸런스게임에 참여하고, 직접 생성하며 예측하는 재미까지 제공하는 종합 밸런스게임 플랫폼입니다.",
-      "images": [],
+      "images": [
+        "images/portfolio/balance_game/img1.png",
+        "images/portfolio/balance_game/img2.png",
+        "images/portfolio/balance_game/img3.png"
+      ],
       "url": "https://gugunan.kro.kr",
       "technologies": [
         {
@@ -162,10 +174,10 @@
     },
     {
       "title": "코인 자동매매 v2",
-      "startDate": "2025",
+      "startDate": "2025.06~",
       "description": "기존 v1의 호환성 문제와 매매 전략 미흡함을 개선하여 최신 라이브러리로 새롭게 개발한 코인 자동매매 시스템입니다. 수익률도 크게 개선된 버전입니다.",
       "images": ["images/portfolio/coin/newcoin1.jpg"],
-      "url": "",
+      "url": "https://github.com/Geun-Hwan/AutoCryptoTrade",
       "technologies": [
         {
           "class": "devicon-python-plain",
@@ -189,23 +201,23 @@
       "years": "2022.11 - 2025.04",
       "mainTech": ["React 16/18, Spring boot 3.*"],
       "technologies": [
-        "React Query",
-        "zustand",
-        "AG Grid",
-        "Chart.js",
         "REST API",
-        "React Native",
-        "TypeScript",
+        "Axios",
+        "Zustand",
+        "ag-grid-community",
+        "react-query",
+        "react-chartjs-2",
+        "react-router",
+        "react-native-mmkv",
+        "react-mentions",
         "WebSocket",
-        "Mysql Spatial Functions",
-        "JWT",
         "Spring Boot",
         "Spring Security",
         "Spring Batch",
-        "Mantine",
-        "mmkv",
-        "jenkins",
-        "react-mentions"
+        "Mysql Spatial Functions",
+        "JWT",
+        "Jenkins",
+        "Mantine"
       ]
     },
     {
@@ -213,14 +225,14 @@
       "title": "컴퓨터공학",
       "years": "2022.03 - 2022.08",
       "mainTech": ["학사"],
-      "technologies": [""]
+      "technologies": ["인공지능"]
     },
     {
       "company": "이젠아카데미 노원",
       "title": "프로그래밍 교육 과정 수료",
       "years": "2021.12 - 2022.06",
       "mainTech": ["Java 8"],
-      "technologies": ["JSP", "Spring", "jQuery", "bootStrap", "MVC"]
+      "technologies": ["JSP", "Spring", "jQuery", "bootStrap", "MVC", "Oracle"]
     },
     {
       "company": "인덕대학교(3년제)",

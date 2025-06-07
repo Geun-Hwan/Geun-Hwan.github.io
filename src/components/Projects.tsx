@@ -41,13 +41,12 @@ const Projects: React.FC<ProjectsProps> = ({
     >
       <span className="portfolio-item d-block">
         <div className="foto" onClick={() => detailsModalShowHandler(project)}>
-          <div>
+          <div style={{ width: "100%" }}>
             <img
               src={project.images[0]}
               alt="projectImages"
               height={230}
               style={{
-                width: 350,
                 marginBottom: 0,
                 paddingBottom: 0,
                 position: "relative",

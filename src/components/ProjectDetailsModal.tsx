@@ -1,9 +1,14 @@
-import React from "react";
-import { Modal, type ModalProps } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Modal } from "react-bootstrap";
 import AwesomeSlider from "react-awesome-slider";
 import AwesomeSliderStyles from "@/scss/light-slider.scss";
 import AwesomeSliderStyles2 from "@/scss/dark-slider.scss";
 import "react-awesome-slider/dist/custom-animations/scale-out-animation.css";
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import java from "react-syntax-highlighter/dist/esm/languages/hljs/java";
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import Collapse from "react-collapse";
+SyntaxHighlighter.registerLanguage("java", java);
 
 const isVideo = (url) => {
   const videoExtensions = ["mp4", "webm", "ogg", "mov"];
@@ -100,43 +105,68 @@ const ProjectDetailsModal: React.FC<any> = (props) => {
         </div>
       );
     }
-    return <div key={i} data-src={elem} />;
+    return (
+      <div
+        key={i}
+        data-src={elem}
+        role="button"
+        onClick={() => window.open(elem, "_blank", "noopener,noreferrer")}
+      />
+    );
   });
 
+  const [codeContent, setCodeContent] = useState(null);
+  const [showCode, setShowCode] = useState(false);
+
+  useEffect(() => {
+    if (data?.codeSnippet) {
+      fetch(`${data?.codeSnippet}`)
+        .then((res) => res.text())
+        .then(setCodeContent)
+        .catch(() => setCodeContent("코드를 불러오지 못했습니다."));
+    }
+
+    return () => {
+      setCodeContent(null);
+      setShowCode(false);
+    };
+  }, [data?.codeSnippet]);
+
   return (
-    <Modal
-      {...modalProps}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-      className="modal-inside"
-    >
-      <span onClick={onHide} className="modal-close">
-        <i className="fas fa-times fa-3x close-icon"></i>
-      </span>
-      <div className="col-md-12">
-        <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px" }}>
-          <div className="slider-tab">
-            <span
-              className="iconify slider-iconfiy"
-              data-icon="emojione:red-circle"
-              data-inline="false"
-              style={{ marginLeft: "5px" }}
-            ></span>{" "}
-            &nbsp;{" "}
-            <span
-              className="iconify slider-iconfiy"
-              data-icon="twemoji:yellow-circle"
-              data-inline="false"
-            ></span>{" "}
-            &nbsp;{" "}
-            <span
-              className="iconify slider-iconfiy"
-              data-icon="twemoji:green-circle"
-              data-inline="false"
-            ></span>
-          </div>
-          {
+    <>
+      <Modal
+        {...modalProps}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        className="modal-inside"
+      >
+        <span onClick={onHide} className="modal-close">
+          <i className="fas fa-times fa-3x close-icon"></i>
+        </span>
+        <div className="col-md-12">
+          <div className="col-md-10 mx-auto" style={{ paddingBottom: "50px" }}>
+            <div className="slider-tab">
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="emojione:red-circle"
+                data-inline="false"
+                style={{ marginLeft: "5px" }}
+              ></span>{" "}
+              &nbsp;{" "}
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="twemoji:yellow-circle"
+                data-inline="false"
+              ></span>{" "}
+              &nbsp;{" "}
+              <span
+                className="iconify slider-iconfiy"
+                data-icon="twemoji:green-circle"
+                data-inline="false"
+              ></span>
+            </div>
+
             <AwesomeSlider
               cssModule={[AwesomeSliderStyles, AwesomeSliderStyles2]}
               animation="scaleOutAnimation"
@@ -146,51 +176,104 @@ const ProjectDetailsModal: React.FC<any> = (props) => {
             >
               {mediaElements}
             </AwesomeSlider>
-          }
-        </div>
-        <div className="col-md-10 mx-auto">
-          <h3
-            style={{
-              padding: "5px 5px 0 5px",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <span>
-              {data?.title}
-              {data?.url ? (
-                <a
-                  href={data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-href"
-                >
-                  <i
-                    className="fas fa-external-link-alt"
-                    style={{ marginLeft: "10px" }}
-                  ></i>
-                </a>
-              ) : null}
-            </span>
+          </div>
+          <div className="col-md-10 mx-auto">
+            <h3
+              style={{
+                padding: "5px 5px 0 5px",
+                display: "flex",
+                justifyContent: "space-between",
+              }}
+            >
+              <span>
+                {data?.title}
+                {data?.url ? (
+                  <a
+                    href={data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-href"
+                  >
+                    <i
+                      className="fas fa-external-link-alt"
+                      style={{ marginLeft: "10px" }}
+                    ></i>
+                  </a>
+                ) : null}
+              </span>
 
-            {data?.codeSnippet && (
-              <button
-                // onClick={() => setShowCode(true)}
-                className="btn btn-outline-primary"
-              >
-                <i className="fas fa-code" style={{ marginRight: "5px" }}></i>
-                More
-              </button>
-            )}
-          </h3>
-          <p className="modal-description">{data?.description}</p>
-          <div className="col-md-12 text-center">
-            <ul className="list-inline mx-auto">{tech}</ul>
+              {data?.codeSnippet && (
+                <button
+                  onClick={() => setShowCode(!showCode)}
+                  className="btn btn-outline-primary"
+                >
+                  <i className="fas fa-code" style={{ marginRight: "5px" }}></i>
+                  {showCode ? "Hide" : "More"}
+                </button>
+              )}
+            </h3>
+            <p className="modal-description">{data?.description}</p>
+            <div className="col-md-12 text-center">
+              <ul className="list-inline mx-auto">{tech}</ul>
+            </div>
           </div>
         </div>
-      </div>
-    </Modal>
+      </Modal>
+      <CodeModal
+        show={showCode}
+        onHide={() => setShowCode(false)}
+        codeContent={codeContent}
+      />
+    </>
   );
 };
 
 export default ProjectDetailsModal;
+
+const CodeModal = ({ show, onHide, codeContent }) => {
+  return (
+    <Modal
+      show={show}
+      onHide={onHide}
+      size="lg"
+      centered
+      className="modal-code"
+    >
+      <Modal.Header style={{ alignItems: "center" }}>
+        <Modal.Title style={{ fontSize: "1.8rem" }}>주요 코드 보기</Modal.Title>
+        <span onClick={onHide} className="modal-close">
+          <i className="fas fa-times fa-3x close-icon"></i>
+        </span>
+      </Modal.Header>
+
+      <Modal.Body>
+        <p
+          className="text-muted"
+          style={{ fontSize: "1.3rem", fontWeight: "bold" }}
+        >
+          ※ 전체 소스는 비공개이며 요청 시 공개 가능합니다.
+        </p>
+        <div
+          style={{
+            maxHeight: "70vh",
+            overflowY: "auto",
+            borderRadius: "8px",
+            backgroundColor: "#f8f8f8",
+            padding: "1rem",
+          }}
+        >
+          <Collapse isOpened={true}>
+            <SyntaxHighlighter
+              language="java"
+              style={atomOneLight}
+              showLineNumbers
+              customStyle={{ fontSize: "1.2rem" }}
+            >
+              {codeContent}
+            </SyntaxHighlighter>
+          </Collapse>
+        </div>
+      </Modal.Body>
+    </Modal>
+  );
+};

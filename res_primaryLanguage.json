@@ -177,7 +177,7 @@
       "startDate": "2025.06~",
       "description": "기존 v1의 호환성 문제와 매매 전략 미흡함을 개선하여 최신 라이브러리로 새롭게 개발한 코인 자동매매 시스템입니다. 수익률도 크게 개선된 버전입니다.",
       "images": ["images/portfolio/coin/newcoin1.jpg"],
-      "url": "",
+      "url": "https://github.com/Geun-Hwan/AutoCryptoTrade",
       "technologies": [
         {
           "class": "devicon-python-plain",

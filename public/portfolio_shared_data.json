@@ -8,6 +8,11 @@
     ],
     "social": [
       {
+        "name": "blog",
+        "url": "https://velog.io/@rmsghks1026/posts",
+        "class": "fas fa-blog"
+      },
+      {
         "name": "github",
         "url": "https://github.com/Geun-Hwan",
         "class": "fab fa-github"

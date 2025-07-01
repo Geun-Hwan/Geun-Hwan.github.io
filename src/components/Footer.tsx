@@ -34,8 +34,8 @@ const Footer: FC<FooterProps> = ({ sharedBasicInfo }) => {
             <small>
               Copyright &copy; 2025{" "}
               {sharedBasicInfo ? sharedBasicInfo.name : "???"}
-              {/* <br />
-              <a href="mailto:rmsghks1026@gmail.com">msghks1026@gmail.com</a> */}
+              <br />
+              <a href="mailto:rmsghks1026@gmail.com">msghks1026@gmail.com</a>
             </small>
           </div>
         </div>

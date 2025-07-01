@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProjectDetailsModal from "./ProjectDetailsModal";
 
 interface Project {
+  status?: string | "PAUSED" | "COMPLETED";
   title: string;
   startDate: string;
   description: string;
@@ -40,7 +41,12 @@ const Projects: React.FC<ProjectsProps> = ({
       style={{ cursor: "pointer" }}
     >
       <span className="portfolio-item d-block">
-        <div className="foto" onClick={() => detailsModalShowHandler(project)}>
+        <div
+          className="foto"
+          onClick={() =>
+            project.status !== "PAUSED" && detailsModalShowHandler(project)
+          }
+        >
           <div style={{ width: "100%" }}>
             <img
               src={project.images[0]}
@@ -52,7 +58,9 @@ const Projects: React.FC<ProjectsProps> = ({
                 position: "relative",
               }}
             />
-            <span className="project-date">{project.startDate}</span>
+            <span className="project-date">
+              {project.status ?? project.startDate}
+            </span>
             <br />
             <p className="project-title-settings mt-3">{project.title}</p>
           </div>
